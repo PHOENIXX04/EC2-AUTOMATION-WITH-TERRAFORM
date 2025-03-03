@@ -12,12 +12,16 @@ This README provides detailed steps on how to set up and automate the **EC2 Inst
 terraform -v
 ```
 
+---
+
 ## **2. Configure AWS Credentials**
 
 - Terraform needs access to AWS. Setup your credentials using:
 ```bash
 aws configure
 ```
+
+---
 
 ## **3. Create a Terraform Configuration File**
 
@@ -26,6 +30,8 @@ aws configure
 mkdir terraform-ec2 && cd terraform-ec2
 touch main.tf
 ```
+
+---
 
 ## **4. Write Terraform Configuration for EC2**
 
@@ -45,12 +51,16 @@ resource "aws_instance" "example" {
 }
 ```
 
+---
+
 ## **5. Initialize Terraform**
 
 - Run the following command to initialize Terraform:
 ```bash
 terraform init
 ```
+
+---
 
 ## **6. Validate and Plan**
 
@@ -60,12 +70,16 @@ terraform validate
 terraform plan
 ```
 
+---
+
 ## **7. Apply the Configuration**
 
 - To create the EC2 instance, run:
 ```bash
 terraform apply -auto-approve
 ```
+
+---
 
 ## **8. Verify the Instance**
 
@@ -75,12 +89,16 @@ aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId,Sta
 ```
 - Or check in the AWS Console.
 
+---
+
 ## **9. Destroy the Instance**
 
 - If you want to delete the EC2 instance, run:
 ```bash
 terraform destroy -auto-approve
 ```
+
+---
 
 ## **10. Conclusion**
 
