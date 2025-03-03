@@ -12,6 +12,8 @@ This README provides detailed steps on how to set up and automate the **EC2 Inst
 terraform -v
 ```
 
+![1](https://github.com/user-attachments/assets/d57c1e31-f555-4ed0-8aef-fcb8709ef454)
+
 ---
 
 ## **2. Configure AWS Credentials**
@@ -20,6 +22,8 @@ terraform -v
 ```bash
 aws configure
 ```
+
+![2](https://github.com/user-attachments/assets/82263952-781f-42e1-9ea8-a2c27797248f)
 
 ---
 
@@ -30,6 +34,8 @@ aws configure
 mkdir terraform-ec2 && cd terraform-ec2
 touch main.tf
 ```
+
+![3](https://github.com/user-attachments/assets/13ef8614-9cd0-41ab-8bf2-96ad3927e5c8)
 
 ---
 
@@ -51,6 +57,8 @@ resource "aws_instance" "example" {
 }
 ```
 
+![4](https://github.com/user-attachments/assets/67d56f09-7625-49a4-acb4-25e790e0f78e)
+
 ---
 
 ## **5. Initialize Terraform**
@@ -59,6 +67,8 @@ resource "aws_instance" "example" {
 ```bash
 terraform init
 ```
+
+![5](https://github.com/user-attachments/assets/d889bba6-c647-4f4e-8ce2-b1070f5e3324)
 
 ---
 
@@ -70,6 +80,8 @@ terraform validate
 terraform plan
 ```
 
+![6](https://github.com/user-attachments/assets/320856ef-395c-4056-b4c0-0fef93fd63d1)
+
 ---
 
 ## **7. Apply the Configuration**
@@ -79,6 +91,9 @@ terraform plan
 terraform apply -auto-approve
 ```
 
+![7](https://github.com/user-attachments/assets/988dcda5-8ef0-4241-a2e8-b585e04170f0)
+![8](https://github.com/user-attachments/assets/382bdb26-76ae-424c-8ba4-10d77f817786)
+
 ---
 
 ## **8. Verify the Instance**
@@ -87,7 +102,12 @@ terraform apply -auto-approve
 ```bash
 aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId,State.Name,PublicIpAddress]' --output table
 ```
+
+![9](https://github.com/user-attachments/assets/d2497593-6c30-45c2-8761-fd6c2b2dc4fc)
+
 - Or check in the AWS Console.
+
+![10](https://github.com/user-attachments/assets/10f02230-fde0-4f5f-951e-92cfc2ae3c29)
 
 ---
 
@@ -97,6 +117,9 @@ aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId,Sta
 ```bash
 terraform destroy -auto-approve
 ```
+
+![11](https://github.com/user-attachments/assets/2497b0cf-2584-457f-aa2d-baf637e7bc7e)
+![12](https://github.com/user-attachments/assets/1e670c1e-c003-47b5-a173-e62ed99381e9)
 
 ---
 
